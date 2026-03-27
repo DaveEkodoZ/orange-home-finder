@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { properties } from "@/data/properties";
 import PropertyCard from "./PropertyCard";
@@ -21,7 +21,7 @@ const FeaturedProperties = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {featured.map((property) => (
-            <PropertyCard key={property.id} property={property} />
+            <PropertyCard key={property.id} property={property} from="/#services" />
           ))}
         </div>
 

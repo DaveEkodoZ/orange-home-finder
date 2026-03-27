@@ -4,11 +4,12 @@ import { Property, formatPrice } from "@/data/properties";
 
 interface PropertyCardProps {
   property: Property;
+  from?: string;
 }
 
-const PropertyCard = ({ property }: PropertyCardProps) => {
+const PropertyCard = ({ property, from }: PropertyCardProps) => {
   return (
-    <Link to={`/biens/${property.id}`} className="group block">
+    <Link to={`/biens/${property.id}`} state={{ from: from || "/biens" }} className="group block">
       <div className="bg-card border border-border rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
         <div className="relative aspect-[4/3] overflow-hidden">
           <img
