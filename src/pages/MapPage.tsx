@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
