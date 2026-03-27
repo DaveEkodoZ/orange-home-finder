@@ -8,6 +8,7 @@ import Properties from "./pages/Properties";
 import PropertyDetail from "./pages/PropertyDetail";
 import MapPage from "./pages/MapPage";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/biens" element={<Properties />} />
