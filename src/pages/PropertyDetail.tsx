@@ -19,7 +19,7 @@ const PropertyDetail = () => {
         <Navbar />
         <div className="pt-32 text-center">
           <h1 className="text-2xl font-display font-bold text-foreground">Bien non trouvé</h1>
-          <Link to="/biens" className="text-primary mt-4 inline-block">Retour aux biens</Link>
+          <Link to={backTo} className="text-primary mt-4 inline-block">{backLabel}</Link>
         </div>
         <Footer />
       </div>
@@ -37,8 +37,8 @@ const PropertyDetail = () => {
       <Navbar />
       <div className="pt-20 md:pt-24">
         <div className="container mx-auto py-8">
-          <Link to="/biens" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-6">
-            <ArrowLeft className="h-4 w-4" /> Retour aux biens
+          <Link to={backTo} className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-6">
+            <ArrowLeft className="h-4 w-4" /> {backLabel}
           </Link>
 
           {/* Image Gallery */}
