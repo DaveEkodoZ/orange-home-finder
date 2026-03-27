@@ -7,6 +7,9 @@ import { properties, formatPrice } from "@/data/properties";
 
 const PropertyDetail = () => {
   const { id } = useParams();
+  const location = useLocation();
+  const backTo = (location.state as any)?.from || "/biens";
+  const backLabel = backTo === "/biens" ? "Retour aux biens" : "Retour à l'accueil";
   const property = properties.find((p) => p.id === id);
   const [activeImage, setActiveImage] = useState(0);
 
