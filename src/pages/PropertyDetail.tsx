@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, MapPin, Bed, Bath, Maximize, Phone, MessageCircle, CheckCircle } from "lucide-react";
+import { ArrowLeft, MapPin, Bed, Bath, Maximize, Phone, MessageCircle, CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { properties, formatPrice } from "@/data/properties";
@@ -7,6 +8,7 @@ import { properties, formatPrice } from "@/data/properties";
 const PropertyDetail = () => {
   const { id } = useParams();
   const property = properties.find((p) => p.id === id);
+  const [activeImage, setActiveImage] = useState(0);
 
   if (!property) {
     return (
@@ -21,6 +23,12 @@ const PropertyDetail = () => {
     );
   }
 
+  // Use all available images, repeat first if only one
+  const images = property.images.length > 1 ? property.images : [property.images[0], property.images[0], property.images[0]];
+
+  const nextImage = () => setActiveImage((prev) => (prev + 1) % images.length);
+  const prevImage = () => setActiveImage((prev) => (prev - 1 + images.length) % images.length);
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -30,10 +38,58 @@ const PropertyDetail = () => {
             <ArrowLeft className="h-4 w-4" /> Retour aux biens
           </Link>
 
-          {/* Image */}
-          <div className="rounded-2xl overflow-hidden mb-8 aspect-[16/7]">
-            <img src={property.images[0]} alt={property.title} className="w-full h-full object-cover" width={800} height={600} />
+          {/* Image Gallery */}
+          <div className="relative rounded-3xl overflow-hidden mb-8 aspect-[16/7] group">
+            <img
+              src={images[activeImage]}
+              alt={`${property.title} - Image ${activeImage + 1}`}
+              className="w-full h-full object-cover transition-all duration-500"
+              width={800}
+              height={600}
+            />
+            {/* Overlay gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+
+            {/* Navigation arrows */}
+            {images.length > 1 && (
+              <>
+                <button
+                  onClick={prevImage}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white shadow-lg"
+                >
+                  <ChevronLeft className="h-6 w-6 text-foreground" />
+                </button>
+                <button
+                  onClick={nextImage}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white shadow-lg"
+                >
+                  <ChevronRight className="h-6 w-6 text-foreground" />
+                </button>
+              </>
+            )}
+
+            {/* Image counter */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full font-medium">
+              {activeImage + 1} / {images.length}
+            </div>
           </div>
+
+          {/* Thumbnails */}
+          {images.length > 1 && (
+            <div className="flex gap-3 mb-8 overflow-x-auto pb-2">
+              {images.map((img, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActiveImage(idx)}
+                  className={`flex-shrink-0 w-24 h-16 rounded-xl overflow-hidden border-2 transition-all duration-300 ${
+                    idx === activeImage ? "border-primary shadow-lg shadow-primary/20 scale-105" : "border-transparent opacity-60 hover:opacity-100"
+                  }`}
+                >
+                  <img src={img} alt={`Miniature ${idx + 1}`} className="w-full h-full object-cover" />
+                </button>
+              ))}
+            </div>
+          )}
 
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Main content */}
