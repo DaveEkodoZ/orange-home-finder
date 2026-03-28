@@ -23,7 +23,7 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="section-padding bg-section-alt">
+    <section id="testimonials" className="section-padding bg-accent">
       <div className="container mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-primary font-semibold text-sm tracking-widest uppercase">Témoignages</span>

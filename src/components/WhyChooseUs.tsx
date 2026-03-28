@@ -57,20 +57,20 @@ const WhyChooseUs = () => {
           {reasons.map((reason, index) => (
             <div
               key={reason.title}
-              className="group relative bg-card border border-border rounded-3xl p-8 overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10"
+              className="group relative bg-background border border-primary/20 rounded-3xl p-8 overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/15"
             >
               {/* Decorative corner gradient */}
-              <div className="absolute -top-16 -right-16 w-40 h-40 bg-gradient-to-br from-primary/15 to-orange-300/10 rounded-full group-hover:scale-150 transition-transform duration-700" />
+              <div className="absolute -top-16 -right-16 w-40 h-40 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full group-hover:scale-150 transition-transform duration-700" />
               
               {/* Highlight badge */}
               <div className="relative inline-block mb-5">
-                <span className="text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1.5 rounded-full">
+                <span className="text-xs font-bold uppercase tracking-wider text-primary-foreground bg-primary px-3 py-1.5 rounded-full">
                   {reason.highlight}
                 </span>
               </div>
 
-              <div className="relative w-14 h-14 bg-gradient-to-br from-primary to-orange-600 rounded-2xl flex items-center justify-center mb-5 shadow-lg shadow-primary/20 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                <reason.icon className="h-7 w-7 text-white" />
+              <div className="relative w-14 h-14 bg-gradient-to-br from-primary to-primary/70 rounded-2xl flex items-center justify-center mb-5 shadow-lg shadow-primary/25 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                <reason.icon className="h-7 w-7 text-primary-foreground" />
               </div>
 
               <h3 className="relative text-xl font-display font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
@@ -79,7 +79,7 @@ const WhyChooseUs = () => {
               <p className="relative text-sm text-muted-foreground leading-relaxed">{reason.desc}</p>
 
               {/* Bottom accent line */}
-              <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-primary to-orange-400 group-hover:w-full transition-all duration-500 rounded-t-full" />
+              <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-primary to-primary/60 group-hover:w-full transition-all duration-500 rounded-t-full" />
             </div>
           ))}
         </div>
