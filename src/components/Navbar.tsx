@@ -5,13 +5,8 @@ import logo from "@/assets/logo.png";
 
 const navItems = [
   { label: "Accueil", path: "/" },
-  { label: "À propos", path: "/#about" },
   { label: "Biens", path: "/biens" },
   { label: "Carte", path: "/carte" },
-  { label: "Services", path: "/#services" },
-  { label: "Témoignages", path: "/#testimonials" },
-  { label: "Blog", path: "/#blog" },
-  { label: "Contact", path: "/#contact" },
 ];
 
 const Navbar = () => {
