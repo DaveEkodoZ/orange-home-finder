@@ -41,7 +41,7 @@ const reasons = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="section-padding bg-section-alt">
+    <section className="section-padding bg-accent">
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary font-semibold text-sm tracking-widest uppercase">Pourquoi nous choisir</span>
