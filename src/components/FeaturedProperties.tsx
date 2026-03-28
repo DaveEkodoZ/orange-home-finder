@@ -4,7 +4,7 @@ import { properties } from "@/data/properties";
 import PropertyCard from "./PropertyCard";
 
 const FeaturedProperties = () => {
-  const featured = properties.filter((p) => p.featured).slice(0, 3);
+  const featured = properties.slice(0, 6);
 
   return (
     <section className="section-padding bg-section-alt">
