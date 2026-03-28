@@ -32,13 +32,17 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-1 bg-muted rounded-full p-1">
           {navItems.map((item) => (
             <Link
               key={item.label}
               to={item.path}
               onClick={() => handleNavClick(item.path)}
-              className={`nav-link ${location.pathname === item.path ? "nav-link-active" : ""}`}
+              className={`px-5 py-2 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 ${
+                location.pathname === item.path
+                  ? "bg-primary text-primary-foreground shadow-md"
+                  : "text-muted-foreground hover:text-foreground hover:bg-background"
+              }`}
             >
               {item.label}
             </Link>
