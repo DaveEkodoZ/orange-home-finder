@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Search, SlidersHorizontal, X } from "lucide-react";
+import { Search, SlidersHorizontal, X, ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PropertyCard from "@/components/PropertyCard";
@@ -12,6 +12,8 @@ const Properties = () => {
   const [selectedStatus, setSelectedStatus] = useState<PropertyStatus | "">("");
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 200000000]);
   const [showFilters, setShowFilters] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
 
   const filtered = useMemo(() => {
     return properties.filter((p) => {
@@ -33,6 +35,12 @@ const Properties = () => {
   };
 
   const hasFilters = search || selectedType || selectedCity || selectedStatus || priceRange[0] > 0 || priceRange[1] < 200000000;
+
+  const totalPages = Math.ceil(filtered.length / itemsPerPage);
+  const paginatedProperties = filtered.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+  // Reset page when filters change
+  useMemo(() => { setCurrentPage(1); }, [search, selectedType, selectedCity, selectedStatus, priceRange]);
 
   return (
     <div className="min-h-screen">
@@ -145,11 +153,46 @@ const Properties = () => {
           </div>
 
           {filtered.length > 0 ? (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filtered.map((property) => (
-                <PropertyCard key={property.id} property={property} />
-              ))}
-            </div>
+            <>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {paginatedProperties.map((property) => (
+                  <PropertyCard key={property.id} property={property} />
+                ))}
+              </div>
+
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="flex items-center justify-center gap-2 mt-10">
+                  <button
+                    onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                    disabled={currentPage === 1}
+                    className="inline-flex items-center gap-1 px-4 py-2 rounded-xl border border-border bg-card text-foreground font-medium hover:border-primary transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                  >
+                    <ChevronLeft className="h-4 w-4" /> Préc.
+                  </button>
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                    <button
+                      key={page}
+                      onClick={() => setCurrentPage(page)}
+                      className={`w-10 h-10 rounded-xl font-semibold transition-colors ${
+                        page === currentPage
+                          ? "bg-primary text-primary-foreground shadow-lg"
+                          : "bg-card border border-border text-foreground hover:border-primary"
+                      }`}
+                    >
+                      {page}
+                    </button>
+                  ))}
+                  <button
+                    onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                    disabled={currentPage === totalPages}
+                    className="inline-flex items-center gap-1 px-4 py-2 rounded-xl border border-border bg-card text-foreground font-medium hover:border-primary transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                  >
+                    Suiv. <ChevronRight className="h-4 w-4" />
+                  </button>
+                </div>
+              )}
+            </>
           ) : (
             <div className="text-center py-20">
               <p className="text-xl font-display font-semibold text-foreground mb-2">Aucun bien trouvé</p>
