@@ -132,6 +132,24 @@ export const properties: Property[] = [
     lng: 9.7050,
     featured: false,
   },
+  {
+    id: "7",
+    title: "Maison Familiale 3 Chambres",
+    type: "maison",
+    status: "vente",
+    price: 35000000,
+    location: "Omnisport",
+    city: "Yaoundé",
+    area: 220,
+    bedrooms: 3,
+    bathrooms: 2,
+    description: "Maison familiale confortable dans le quartier Omnisport. Construction solide, bon voisinage, proche des écoles et marchés. Idéale pour une première acquisition.",
+    features: ["Garage", "Cour clôturée", "Cuisine équipée", "Citerne d'eau"],
+    images: [property1],
+    lat: 3.8650,
+    lng: 11.5200,
+    featured: false,
+  },
 ];
 
 export const propertyTypes: { value: PropertyType; label: string }[] = [
