@@ -49,9 +49,9 @@ const HeroSection = () => {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-primary-foreground/10 animate-fade-in" style={{ animationDelay: "0.5s" }}>
             {[
-              { number: "500+", label: "Biens vendus" },
-              { number: "10+", label: "Années d'expérience" },
-              { number: "98%", label: "Clients satisfaits" },
+              { number: "50+", label: "Biens disponibles" },
+              { number: "100%", label: "Engagement qualité" },
+              { number: "24/7", label: "À votre écoute" },
             ].map((stat) => (
               <div key={stat.label}>
                 <div className="text-3xl md:text-4xl font-display font-bold text-primary">{stat.number}</div>
