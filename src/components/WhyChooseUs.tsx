@@ -9,9 +9,9 @@ const reasons = [
   },
   {
     icon: Award,
-    title: "10+ ans d'expertise",
-    desc: "Plus d'une décennie à bâtir des projets immobiliers réussis au Cameroun. Notre expérience est votre meilleure garantie.",
-    highlight: "Depuis 2014",
+    title: "Ambition & modernité",
+    desc: "Une équipe jeune et dynamique, dotée d'une vision moderne du marché immobilier camerounais. Nous apportons un regard neuf et innovant.",
+    highlight: "Vision neuve",
   },
   {
     icon: Clock,
@@ -21,15 +21,15 @@ const reasons = [
   },
   {
     icon: Users,
-    title: "Agents certifiés",
-    desc: "Nos agents sont rigoureusement formés et certifiés. Ils connaissent le marché local et vous accompagnent avec professionnalisme.",
-    highlight: "50+ experts",
+    title: "Agents qualifiés",
+    desc: "Nos agents sont rigoureusement sélectionnés et formés. Ils connaissent le marché local et vous accompagnent avec professionnalisme.",
+    highlight: "Équipe dédiée",
   },
   {
     icon: TrendingUp,
-    title: "Rentabilité prouvée",
-    desc: "Nos clients bénéficient d'un retour sur investissement moyen de 15% par an grâce à nos conseils stratégiques.",
-    highlight: "+15% / an",
+    title: "Rentabilité optimisée",
+    desc: "Nous sélectionnons pour vous les meilleures opportunités d'investissement pour maximiser votre retour sur investissement.",
+    highlight: "ROI optimal",
   },
   {
     icon: HeartHandshake,

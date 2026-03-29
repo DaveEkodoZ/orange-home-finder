@@ -15,7 +15,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-primary-foreground/60 text-sm leading-relaxed">
-              Votre partenaire immobilier de confiance au Cameroun. Vente, location, construction et gestion immobilière.
+              Votre nouveau partenaire immobilier de confiance au Cameroun. Vente, location, construction et gestion immobilière.
             </p>
           </div>
 
