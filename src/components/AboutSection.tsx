@@ -25,8 +25,8 @@ const AboutSection = () => {
               height={600}
             />
             <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 rounded-2xl shadow-xl hidden md:block">
-              <div className="text-3xl font-display font-bold">10+</div>
-              <div className="text-sm opacity-90">Années d'expertise</div>
+              <div className="text-3xl font-display font-bold">100%</div>
+              <div className="text-sm opacity-90">Engagement & passion</div>
             </div>
           </div>
 
@@ -37,7 +37,7 @@ const AboutSection = () => {
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
               Notre entreprise est spécialisée dans la vente, la location, la construction et la gestion immobilière au Cameroun.
-              Avec plus de 10 ans d'expérience, nous accompagnons nos clients dans tous leurs projets immobiliers avec professionnalisme et transparence.
+              Animés par une vision moderne et ambitieuse, nous accompagnons nos clients dans tous leurs projets immobiliers avec professionnalisme et transparence.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-3">
