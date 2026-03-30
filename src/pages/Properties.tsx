@@ -39,6 +39,11 @@ const Properties = () => {
   const totalPages = Math.ceil(filtered.length / itemsPerPage);
   const paginatedProperties = filtered.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+
   // Reset page when filters change
   useMemo(() => { setCurrentPage(1); }, [search, selectedType, selectedCity, selectedStatus, priceRange]);
 
