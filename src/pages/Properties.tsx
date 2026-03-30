@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Search, SlidersHorizontal, X, ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -13,6 +13,8 @@ const Properties = () => {
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 200000000]);
   const [showFilters, setShowFilters] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const topRef = useRef<HTMLDivElement>(null);
+  const isFirstPaginationRender = useRef(true);
   const itemsPerPage = 6;
 
   const filtered = useMemo(() => {
@@ -40,17 +42,27 @@ const Properties = () => {
   const paginatedProperties = filtered.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   const handlePageChange = (page: number) => {
+    if (page === currentPage) return;
     setCurrentPage(page);
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
-  // Reset page when filters change
-  useMemo(() => { setCurrentPage(1); }, [search, selectedType, selectedCity, selectedStatus, priceRange]);
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [search, selectedType, selectedCity, selectedStatus, priceRange]);
+
+  useEffect(() => {
+    if (isFirstPaginationRender.current) {
+      isFirstPaginationRender.current = false;
+      return;
+    }
+
+    topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [currentPage]);
 
   return (
     <div className="min-h-screen">
       <Navbar />
-      <div className="pt-20 md:pt-24">
+      <div ref={topRef} className="pt-20 md:pt-24 scroll-mt-24 md:scroll-mt-28">
         {/* Header */}
         <div className="bg-gradient-to-br from-primary to-orange-dark py-16 px-4">
           <div className="container mx-auto text-center">
