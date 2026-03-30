@@ -39,6 +39,11 @@ const Properties = () => {
   const totalPages = Math.ceil(filtered.length / itemsPerPage);
   const paginatedProperties = filtered.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+
   // Reset page when filters change
   useMemo(() => { setCurrentPage(1); }, [search, selectedType, selectedCity, selectedStatus, priceRange]);
 
@@ -164,7 +169,7 @@ const Properties = () => {
               {totalPages > 1 && (
                 <div className="flex items-center justify-center gap-2 mt-10">
                   <button
-                    onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                    onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
                     disabled={currentPage === 1}
                     className="inline-flex items-center gap-1 px-4 py-2 rounded-xl border border-border bg-card text-foreground font-medium hover:border-primary transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                   >
@@ -173,7 +178,7 @@ const Properties = () => {
                   {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                     <button
                       key={page}
-                      onClick={() => setCurrentPage(page)}
+                      onClick={() => handlePageChange(page)}
                       className={`w-10 h-10 rounded-xl font-semibold transition-colors ${
                         page === currentPage
                           ? "bg-primary text-primary-foreground shadow-lg"
@@ -184,7 +189,7 @@ const Properties = () => {
                     </button>
                   ))}
                   <button
-                    onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                    onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
                     disabled={currentPage === totalPages}
                     className="inline-flex items-center gap-1 px-4 py-2 rounded-xl border border-border bg-card text-foreground font-medium hover:border-primary transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                   >
