@@ -169,7 +169,7 @@ const Properties = () => {
               {totalPages > 1 && (
                 <div className="flex items-center justify-center gap-2 mt-10">
                   <button
-                    onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                    onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
                     disabled={currentPage === 1}
                     className="inline-flex items-center gap-1 px-4 py-2 rounded-xl border border-border bg-card text-foreground font-medium hover:border-primary transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                   >
