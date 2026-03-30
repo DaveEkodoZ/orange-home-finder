@@ -178,7 +178,7 @@ const Properties = () => {
                   {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                     <button
                       key={page}
-                      onClick={() => setCurrentPage(page)}
+                      onClick={() => handlePageChange(page)}
                       className={`w-10 h-10 rounded-xl font-semibold transition-colors ${
                         page === currentPage
                           ? "bg-primary text-primary-foreground shadow-lg"
