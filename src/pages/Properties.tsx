@@ -189,7 +189,7 @@ const Properties = () => {
                     </button>
                   ))}
                   <button
-                    onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                    onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
                     disabled={currentPage === totalPages}
                     className="inline-flex items-center gap-1 px-4 py-2 rounded-xl border border-border bg-card text-foreground font-medium hover:border-primary transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                   >
