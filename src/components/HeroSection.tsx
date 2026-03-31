@@ -20,12 +20,12 @@ const HeroSection = () => {
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground leading-tight mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
             Votre partenaire de confiance en{" "}
-            <span className="text-primary">immobilier</span>
+            <span className="text-primary">immobilier & équipement</span>
           </h1>
 
           <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 leading-relaxed animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            Achetez, vendez, construisez et investissez en toute sécurité.
-            Nous vous accompagnons dans chaque étape de votre projet immobilier.
+            Immobilier, mobilier, électroménager, décoration et matériaux de construction.
+            Nous vous accompagnons dans tous vos projets avec des produits et services de qualité.
           </p>
 
           <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
@@ -49,7 +49,7 @@ const HeroSection = () => {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-primary-foreground/10 animate-fade-in" style={{ animationDelay: "0.5s" }}>
             {[
-              { number: "50+", label: "Biens disponibles" },
+              { number: "50+", label: "Biens & produits" },
               { number: "100%", label: "Engagement qualité" },
               { number: "24/7", label: "À votre écoute" },
             ].map((stat) => (

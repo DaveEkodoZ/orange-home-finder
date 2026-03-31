@@ -67,10 +67,10 @@ const Properties = () => {
         <div className="bg-gradient-to-br from-primary to-orange-dark py-16 px-4">
           <div className="container mx-auto text-center">
             <h1 className="text-3xl md:text-4xl font-display font-bold text-primary-foreground mb-4">
-              Tous nos biens immobiliers
+              Tous nos biens & produits
             </h1>
             <p className="text-primary-foreground/80 max-w-xl mx-auto">
-              Explorez notre catalogue complet et trouvez le bien qui vous correspond.
+              Explorez notre catalogue complet : immobilier, mobilier, électroménager, décoration et matériaux.
             </p>
           </div>
         </div>
@@ -82,7 +82,7 @@ const Properties = () => {
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               <input
                 type="text"
-                placeholder="Rechercher un bien, un quartier..."
+                placeholder="Rechercher un bien, un produit, un quartier..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 className="w-full pl-12 pr-4 py-3 bg-card border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/30 text-foreground"
@@ -166,7 +166,7 @@ const Properties = () => {
 
           {/* Results */}
           <div className="text-sm text-muted-foreground mb-6">
-            {filtered.length} bien{filtered.length > 1 ? "s" : ""} trouvé{filtered.length > 1 ? "s" : ""}
+            {filtered.length} résultat{filtered.length > 1 ? "s" : ""} trouvé{filtered.length > 1 ? "s" : ""}
           </div>
 
           {filtered.length > 0 ? (

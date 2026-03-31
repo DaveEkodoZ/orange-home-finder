@@ -3,11 +3,11 @@ import aboutImg from "@/assets/about-img.jpg";
 
 const features = [
   "Vente et location de biens immobiliers",
-  "Construction et rénovation de bâtiments",
-  "Gestion immobilière complète",
-  "Conseils en investissement",
-  "Accompagnement administratif",
-  "Suivi de chantier personnalisé",
+  "Vente de mobilier et équipement",
+  "Électroménager de qualité",
+  "Décoration intérieure",
+  "Matériaux de construction",
+  "Accompagnement personnalisé",
 ];
 
 const AboutSection = () => {
@@ -36,8 +36,8 @@ const AboutSection = () => {
               Votre expert immobilier de <span className="text-primary">confiance</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Notre entreprise est spécialisée dans la vente, la location, la construction et la gestion immobilière au Cameroun.
-              Animés par une vision moderne et ambitieuse, nous accompagnons nos clients dans tous leurs projets immobiliers avec professionnalisme et transparence.
+              Notre entreprise est spécialisée dans l'immobilier, la vente de mobilier, d'électroménager, de décoration et de matériaux de construction au Cameroun.
+              Animés par une vision moderne et ambitieuse, nous accompagnons nos clients dans tous leurs projets avec professionnalisme et transparence.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-3">
