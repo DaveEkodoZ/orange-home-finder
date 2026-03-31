@@ -49,7 +49,7 @@ const HeroSection = () => {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-primary-foreground/10 animate-fade-in" style={{ animationDelay: "0.5s" }}>
             {[
-              { number: "50+", label: "Biens disponibles" },
+              { number: "50+", label: "Biens & produits" },
               { number: "100%", label: "Engagement qualité" },
               { number: "24/7", label: "À votre écoute" },
             ].map((stat) => (

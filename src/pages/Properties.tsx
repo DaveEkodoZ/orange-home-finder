@@ -166,7 +166,7 @@ const Properties = () => {
 
           {/* Results */}
           <div className="text-sm text-muted-foreground mb-6">
-            {filtered.length} bien{filtered.length > 1 ? "s" : ""} trouvé{filtered.length > 1 ? "s" : ""}
+            {filtered.length} résultat{filtered.length > 1 ? "s" : ""} trouvé{filtered.length > 1 ? "s" : ""}
           </div>
 
           {filtered.length > 0 ? (

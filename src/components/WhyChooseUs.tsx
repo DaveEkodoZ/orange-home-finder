@@ -49,7 +49,7 @@ const WhyChooseUs = () => {
             La confiance méritée par <span className="text-primary">l'excellence</span>
           </h2>
           <p className="text-muted-foreground mt-5 text-lg leading-relaxed">
-            Chez ImmoTrust, nous ne vendons pas simplement des biens — nous construisons des relations durables fondées sur la confiance, la transparence et des résultats concrets. Voici ce qui nous distingue.
+            Chez ImmoTrust, nous ne vendons pas simplement des biens et produits — nous construisons des relations durables fondées sur la confiance, la transparence et des résultats concrets. Voici ce qui nous distingue.
           </p>
         </div>
 

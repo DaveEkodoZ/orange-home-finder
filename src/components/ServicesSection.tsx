@@ -1,12 +1,12 @@
-import { Home, Building2, Hammer, Briefcase, FileText, MapPin } from "lucide-react";
+import { Home, Building2, Hammer, Sofa, Refrigerator, Paintbrush } from "lucide-react";
 
 const services = [
-  { icon: Home, title: "Vente de terrains", desc: "Terrains titrés et viabilisés dans les meilleurs quartiers.", color: "from-orange-400 to-orange-600" },
-  { icon: Building2, title: "Location d'appartements", desc: "Appartements et maisons de standing pour toutes les bourses.", color: "from-amber-400 to-amber-600" },
-  { icon: Hammer, title: "Construction", desc: "Construction de bâtiments clé en main avec des matériaux de qualité.", color: "from-orange-500 to-red-500" },
-  { icon: Briefcase, title: "Gestion immobilière", desc: "Gestion locative complète de vos biens immobiliers.", color: "from-yellow-400 to-orange-500" },
-  { icon: FileText, title: "Conseils en investissement", desc: "Accompagnement personnalisé pour vos investissements.", color: "from-orange-400 to-rose-500" },
-  { icon: MapPin, title: "Démarches administratives", desc: "Suivi des démarches et accompagnement juridique.", color: "from-amber-500 to-orange-600" },
+  { icon: Home, title: "Immobilier", desc: "Vente et location de terrains, maisons, appartements et villas.", color: "from-orange-400 to-orange-600" },
+  { icon: Building2, title: "Construction", desc: "Construction de bâtiments clé en main avec des matériaux de qualité.", color: "from-amber-400 to-amber-600" },
+  { icon: Sofa, title: "Mobilier", desc: "Tables, chaises, canapés et équipements pour votre intérieur.", color: "from-orange-500 to-red-500" },
+  { icon: Refrigerator, title: "Électroménager", desc: "Réfrigérateurs, machines à laver et appareils de qualité.", color: "from-yellow-400 to-orange-500" },
+  { icon: Paintbrush, title: "Décoration", desc: "Rideaux, luminaires, coussins et accessoires déco tendance.", color: "from-orange-400 to-rose-500" },
+  { icon: Hammer, title: "Matériaux de construction", desc: "Ciment, fer, carrelage, peinture et fournitures de chantier.", color: "from-amber-500 to-orange-600" },
 ];
 
 const ServicesSection = () => {
