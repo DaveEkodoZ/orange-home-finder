@@ -67,10 +67,10 @@ const Properties = () => {
         <div className="bg-gradient-to-br from-primary to-orange-dark py-16 px-4">
           <div className="container mx-auto text-center">
             <h1 className="text-3xl md:text-4xl font-display font-bold text-primary-foreground mb-4">
-              Tous nos biens immobiliers
+              Tous nos biens & produits
             </h1>
             <p className="text-primary-foreground/80 max-w-xl mx-auto">
-              Explorez notre catalogue complet et trouvez le bien qui vous correspond.
+              Explorez notre catalogue complet : immobilier, mobilier, électroménager, décoration et matériaux.
             </p>
           </div>
         </div>
