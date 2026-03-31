@@ -24,8 +24,8 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 leading-relaxed animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            Achetez, vendez, construisez et investissez en toute sécurité.
-            Nous vous accompagnons dans chaque étape de votre projet immobilier.
+            Immobilier, mobilier, électroménager, décoration et matériaux de construction.
+            Nous vous accompagnons dans tous vos projets avec des produits et services de qualité.
           </p>
 
           <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
