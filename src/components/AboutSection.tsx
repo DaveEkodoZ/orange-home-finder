@@ -3,11 +3,11 @@ import aboutImg from "@/assets/about-img.jpg";
 
 const features = [
   "Vente et location de biens immobiliers",
-  "Construction et rénovation de bâtiments",
-  "Gestion immobilière complète",
-  "Conseils en investissement",
-  "Accompagnement administratif",
-  "Suivi de chantier personnalisé",
+  "Vente de mobilier et équipement",
+  "Électroménager de qualité",
+  "Décoration intérieure",
+  "Matériaux de construction",
+  "Accompagnement personnalisé",
 ];
 
 const AboutSection = () => {
